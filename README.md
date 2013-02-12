@@ -6,7 +6,7 @@ Everything I always wanted to know about browser cookies but was too lazy to try
 Introduction
 ========================
 
-I thought I understood browser cookie behavior. But, turns out I'm clueless of all the various senarios and how they played out in the various browsers. I started asking around to coworkers and friends questions like "Hey do you know if a browser sends a cookie to the server if....?" and it turns out most folks dont know either. The goal of this project is to identify all possible scenarios and create a working test for each one.
+I thought I understood browser cookie behavior. But, turns out I did'nt know all the various senarios in the various browsers. I started asking around to coworkers and friends questions like "Hey do you know if a browser sends a cookie to the server if....?" and it turns out most folks dont know either. The goal of this project is to identify all possible scenarios and create a working test for each one.
 
 
 
