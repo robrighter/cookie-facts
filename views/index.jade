@@ -2,19 +2,10 @@ extends ./layout
 
 block content
 	#topbar
-		h1.title='Pardot Push API'
-		.notify.error='Not Authenticated'
+		h1.title='Cookie Facts'
 	#console
 
-	#authbox
-		h2='Login'
-		div.notify.error='This is a test'
-		form(action='#', method='post')
-			div.email
-				label='Email'
-				input(type='text',name='email',id='email')
-			div.password
-				label='Password'
-				input(type='password',name='password',id='password')
-			div.submit
-				button(id='submit')='Submit'
+	#content
+		h2='Cookie Tests'
+		div.test-list
+			p test list goes here
