@@ -8,4 +8,6 @@ block content
 	#content
 		h2='Cookie Tests'
 		div.test-list
-			p test list goes here
+			- testresults.forEach(function(item){
+				div= item
+			- })
