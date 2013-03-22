@@ -5,11 +5,12 @@ var fs = require('fs');
 var https = require('https');
 var http = require('http');
 var app = express();
+var scenarioHelper = require('./scenario-helper');
 
 
 var scenarios = {};
 fs.readdirSync('./scenarios').forEach(function(s){
-	var obj = require('./scenarios/'+(s.replace(/.js/g, '')))(config);
+	var obj = require('./scenarios/'+(s.replace(/.js/g, '')))(config,scenarioHelper);
 	console.log('THE SCENARIO OBJECT IS:');
 	console.log(obj);
 	scenarios[obj.testid] = obj

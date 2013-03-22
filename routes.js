@@ -11,7 +11,9 @@ module.exports.decorate = function(app,config,scenarios){
 	app.get('/', function(req,res){
 		var resultTables = [];
 		Object.keys(scenarios).forEach(function(key){
-			resultTables.push(scenarios[key].generateResultsTable(testResults));
+			var intro = "<p><strong>"+scenarios[key].name+"</strong><br />";
+			intro += scenarios[key].description+"</p>";
+			resultTables.push(intro+scenarios[key].generateResultsTable(testResults));
 		});
 		res.render('index',{
 			title: 'Cookie Facts',
@@ -71,7 +73,18 @@ module.exports.decorate = function(app,config,scenarios){
 		});
 	});
 
-	app.post('/verify-write-results/', function(req,res){
+	app.get('/read-cookie-record-result/:toread/:resultname', function(req,res){
+		var result = (req.cookies[req.params.toread] === 'yes') ? true : false;
+		if( !(testResults[req.headers['user-agent']]) ){
+			testResults[req.headers['user-agent']] = {};
+		}
+		testResults[req.headers['user-agent']][req.params.resultname] = result;
+		res.send({
+			value: req.cookies[req.params.toread]
+		});
+	});
+
+	app.post('/verify-results/', function(req,res){
 		var expected = JSON.parse(req.body.expectedcookies);
 		var results = {};
 		expected.forEach(function(item){
