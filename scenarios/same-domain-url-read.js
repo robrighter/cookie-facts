@@ -12,7 +12,9 @@ module.exports = function(tid, config, scenarioHelper){
 		
 		res.render('testpage', {
 			testid: tid,
-			xhrUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-xhr",
+			xhrGetUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-xhr-get",
+			xhrPostUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-xhr-post",
+			xhrPostWithCredsUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-xhr-post-creds",
 			imageUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-image",
 			cssUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-css",
 			iframeUrl: config.httpUrl + "/read-cookie-record-result/readable/"+tid+"-iframe",

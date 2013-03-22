@@ -46,7 +46,9 @@ function makeExpectedCookiesList(tid){
 		tid + '-javascript',
 		tid + '-image',
 		tid + '-iframe',
-		tid + '-xhr',
+		tid + '-xhr-get',
+		tid + '-xhr-post',
+		tid + '-xhr-post-creds',
 		tid + '-jsonp'
 	];
 }

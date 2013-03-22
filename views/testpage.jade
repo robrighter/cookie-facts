@@ -14,7 +14,29 @@ body
 
 	script(type='text/javascript')
 		document.cookie = '#{testid}-javascript=yes';
-		$.get('#{xhrUrl}', function(){ });
+
+		//xhr get
+		$.get('#{xhrGetUrl}', function(){ });
+		
+		//xhr post
+		$.ajax({
+			url: '#{xhrPostUrl}',
+			type: 'POST',
+			data: {},
+			dataType: 'json'
+		});
+
+		//xhr post + withCredentials
+		$.ajax({
+			url: '#{xhrPostWithCredsUrl}',
+			type: 'POST',
+			data: {},
+			dataType: 'json',
+			xhrFields: {
+				withCredentials: true
+			}
+		});
+
 		$.get('#{jsonpUrl}', function(){ });
 		setTimeout(function(){
 			$('#sendresults').submit();

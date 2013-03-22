@@ -32,6 +32,15 @@ module.exports.decorate = function(app,config,scenarios){
 		});
 	});
 
+	app.post('/write-cookie/:key/:value', function(req,res){
+		res.cookie(req.params.key, req.params.value)
+		res.send({
+			reply: 'wrote',
+			key: req.params.key,
+			value: req.params.value
+		});
+	});
+
 	app.get('/write-cookie-html/:key/:value', function(req,res){
 		res.cookie(req.params.key, req.params.value)
 		res.render('htmlreply',{
@@ -75,6 +84,17 @@ module.exports.decorate = function(app,config,scenarios){
 	});
 
 	app.get('/read-cookie-record-result/:toread/:resultname', function(req,res){
+		var result = (req.cookies[req.params.toread] === 'yes') ? true : false;
+		if( !(testResults[req.headers['user-agent']]) ){
+			testResults[req.headers['user-agent']] = {};
+		}
+		testResults[req.headers['user-agent']][req.params.resultname] = result;
+		res.send({
+			value: req.cookies[req.params.toread]
+		});
+	});
+
+	app.post('/read-cookie-record-result/:toread/:resultname', function(req,res){
 		var result = (req.cookies[req.params.toread] === 'yes') ? true : false;
 		if( !(testResults[req.headers['user-agent']]) ){
 			testResults[req.headers['user-agent']] = {};
