@@ -7,6 +7,7 @@ module.exports = function(tid, config, scenarioHelper){
 		res.cookie(tid+'-html', 'yes')
 		res.render('testpage', {
 			testid: tid,
+			write: true,
 			xhrGetUrl: config.httpUrl + "/write-cookie/"+tid+"-xhr-get/yes",
 			xhrPostUrl: config.httpUrl + "/write-cookie/"+tid+"-xhr-post/yes",
 			xhrPostWithCredsUrl: config.httpUrl + "/write-cookie/"+tid+"-xhr-post-creds/yes",

@@ -8,7 +8,7 @@ module.exports = function(tid, config, scenarioHelper){
 		if( !(config.testResults[req.headers['user-agent']]) ){
 			config.testResults[req.headers['user-agent']] = {};
 		}
-		var htmlResult = (req.cookies['readable'] === 'yes')? true : false;
+		var htmlResult = (req.cookies['readable'] === tid)? true : false;
 		config.testResults[req.headers['user-agent']][tid+'-html'] = htmlResult;
 		
 		res.render('testpage', {

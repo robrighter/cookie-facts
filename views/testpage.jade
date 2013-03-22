@@ -13,8 +13,6 @@ body
 	
 
 	script(type='text/javascript')
-		document.cookie = '#{testid}-javascript=yes';
-
 		//xhr get
 		$.get('#{xhrGetUrl}', function(){ });
 		
@@ -45,8 +43,17 @@ body
 
 	- if(typeof(javascriptReadUrl) !== 'undefined'){
 		script(type='text/javascript')
-			$.get('#{javascriptReadUrl}', function(){ });
+			if(document.cookie.indexOf('readable=#{testid}')> -1){
+				$('body').append("<iframe src='#{javascriptReadUrl}'></iframe>");
+			}
 	- }
+
+	- if((typeof(write) !== 'undefined') && write){
+		script(type='text/javascript')
+			document.cookie = '#{testid}-javascript=yes';
+	- }
+
+
 
 block footer
 	footer

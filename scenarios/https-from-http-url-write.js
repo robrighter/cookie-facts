@@ -1,7 +1,7 @@
 module.exports = function(tid, config, scenarioHelper){
 	
 	var expectedCookies = scenarioHelper.makeExpectedCookiesList(tid);
-	var url = config.otherHttpUrl;
+	var url = config.httpsUrl;
 
 	function startRoute(req,res){
 		//set the cookie for the normal html request route
@@ -25,8 +25,8 @@ module.exports = function(tid, config, scenarioHelper){
 
 	return {
 		testid: tid,
-		name: 'Other Domain URL (write)',
-		description: 'Attempts to set a cookie on another unrelated domain from current domain.',
+		name: 'HTTPS from HTTP (write)',
+		description: 'Attempts to set a cookie on an https url from an http url.',
 		startUrl: config.httpUrl + '/' + tid,
 		generateResultsTable: scenarioHelper.makeResultsParser(expectedCookies,tid),
 		routes: [ 

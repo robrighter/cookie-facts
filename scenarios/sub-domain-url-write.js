@@ -8,6 +8,7 @@ module.exports = function(tid, config, scenarioHelper){
 		var url = config.subdomainHttpUrl;
 		res.render('testpage', {
 			testid: tid,
+			write: true,
 			xhrGetUrl: url + "/write-cookie/"+tid+"-xhr-get/yes",
 			xhrPostUrl: url + "/write-cookie/"+tid+"-xhr-post/yes",
 			xhrPostWithCredsUrl: url + "/write-cookie/"+tid+"-xhr-post-creds/yes",
