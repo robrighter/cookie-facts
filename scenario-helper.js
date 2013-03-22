@@ -38,6 +38,20 @@ function makeResultsParser(expectedCookies, tid){
 	return generateResultsTable;
 }
 
+function makeExpectedCookiesList(tid){
+	return [
+		tid + '-html',
+		tid + '-css',
+		tid + '-script',
+		tid + '-javascript',
+		tid + '-image',
+		tid + '-iframe',
+		tid + '-xhr',
+		tid + '-jsonp'
+	];
+}
+
 module.exports = {
-	makeResultsParser: makeResultsParser
+	makeResultsParser: makeResultsParser,
+	makeExpectedCookiesList: makeExpectedCookiesList
 };

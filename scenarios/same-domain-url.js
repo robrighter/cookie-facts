@@ -1,17 +1,7 @@
 module.exports = function(config, scenarioHelper){
 
 	var tid = 'same-domain-url-write';
-
-	var expectedCookies = [
-		'same-domain-url-write-html',
-		'same-domain-url-write-css',
-		'same-domain-url-write-script',
-		'same-domain-url-write-javascript',
-		'same-domain-url-write-image',
-		'same-domain-url-write-iframe',
-		'same-domain-url-write-xhr',
-		'same-domain-url-write-jsonp'
-	]
+	var expectedCookies = scenarioHelper.makeExpectedCookiesList(tid);
 
 	function startRoute(req,res){
 		//set the cookie for the normal html request route
