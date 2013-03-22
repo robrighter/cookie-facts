@@ -83,27 +83,18 @@ module.exports.decorate = function(app,config,scenarios){
 		});
 	});
 
-	app.get('/read-cookie-record-result/:toread/:resultname', function(req,res){
-		var result = (req.cookies[req.params.toread] === 'yes') ? true : false;
+	app.get('/read-cookie-record-result/:toread/:tid/:resultname', readCookieRecordResult);
+	app.post('/read-cookie-record-result/:toread/:tid/:resultname', readCookieRecordResult);
+	function readCookieRecordResult(req,res){
+		var result = (req.cookies[req.params.toread] === req.params.tid) ? true : false;
 		if( !(testResults[req.headers['user-agent']]) ){
 			testResults[req.headers['user-agent']] = {};
 		}
-		testResults[req.headers['user-agent']][req.params.resultname] = result;
+		testResults[req.headers['user-agent']][req.params.tid+req.params.resultname] = result;
 		res.send({
 			value: req.cookies[req.params.toread]
 		});
-	});
-
-	app.post('/read-cookie-record-result/:toread/:resultname', function(req,res){
-		var result = (req.cookies[req.params.toread] === 'yes') ? true : false;
-		if( !(testResults[req.headers['user-agent']]) ){
-			testResults[req.headers['user-agent']] = {};
-		}
-		testResults[req.headers['user-agent']][req.params.resultname] = result;
-		res.send({
-			value: req.cookies[req.params.toread]
-		});
-	});
+	}
 
 	app.post('/verify-results/', function(req,res){
 		var expected = JSON.parse(req.body.expectedcookies);

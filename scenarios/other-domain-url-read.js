@@ -1,7 +1,7 @@
 module.exports = function(tid, config, scenarioHelper){
 	
 	var expectedCookies = scenarioHelper.makeExpectedCookiesList(tid);
-	var url = config.subdomainHttpUrl;
+	var url = config.otherHttpUrl;;
 
 	function readRoute(req,res){
 		//read the cookie for the normal html request route
@@ -34,8 +34,8 @@ module.exports = function(tid, config, scenarioHelper){
 
 	return {
 		testid: tid,
-		name: 'Sub-Domain URL (read)',
-		description: 'Attempts to read a cookie on a sub domain.',
+		name: 'Other Domain URL (read)',
+		description: 'Attempts to read a cookie on another unrelated domain.',
 		startUrl: url + '/' + tid,
 		generateResultsTable: scenarioHelper.makeResultsParser(expectedCookies,tid),
 		routes: [ 
