@@ -13,7 +13,11 @@ module.exports.decorate = function(app,config,scenarios){
 		Object.keys(scenarios).forEach(function(key){
 			resultTables.push(scenarios[key].generateResultsTable(testResults));
 		});
-		res.render('index',{title: 'Cookie Facts', testresults: resultTables});
+		res.render('index',{
+			title: 'Cookie Facts',
+			testresults: resultTables,
+			scenarios: scenarios
+		});
 	});
 
 	app.get('/write-cookie/:key/:value', function(req,res){

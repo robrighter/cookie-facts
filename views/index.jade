@@ -6,8 +6,14 @@ block content
 	#console
 
 	#content
-		h2='Cookie Tests'
-		div.test-list
+		div.scenario-list
+			h2='Scenarios'
+			- for(key in scenarios){
+				li
+					a(href=scenarios[key].startUrl)= scenarios[key].name
+			- }
+		div.results-list
+			h2='Results'
 			- testresults.forEach(function(item){
-				div= item
+				!{item}
 			- })
