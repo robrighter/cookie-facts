@@ -6,6 +6,7 @@ module.exports.decorate = function(app,config,scenarios){
 	** LIST ALL ROUTES **
 	*********************/
 	var testResults = {};
+	config.testResults = testResults;
 
 
 	app.get('/', function(req,res){
@@ -86,15 +87,26 @@ module.exports.decorate = function(app,config,scenarios){
 
 	app.post('/verify-results/', function(req,res){
 		var expected = JSON.parse(req.body.expectedcookies);
-		var results = {};
+		if(!testResults[req.headers['user-agent']]){
+			testResults[req.headers['user-agent']] = {};
+		}
+		var results = testResults[req.headers['user-agent']];
+
 		expected.forEach(function(item){
-			console.log('the Cookies are:');
-			console.log(req.cookies);
-			console.log(item + ' is ' + req.cookies[item]);
 			results[item] = (req.cookies[item] === 'yes')? true : false;
 		});
-		testResults[req.headers['user-agent']] = results;
-		console.log(testResults);
+		res.redirect(302, config.httpUrl);
+	});
+
+	app.post('/verify-read-results/', function(req,res){
+		var expected = JSON.parse(req.body.expectedcookies);
+		if(!testResults[req.headers['user-agent']]){
+			testResults[req.headers['user-agent']] = {};
+		}
+		var results = testResults[req.headers['user-agent']];
+		expected.forEach(function(item){
+			results[item] = results[item] ? true : false;
+		});
 		res.redirect(302, config.httpUrl);
 	});
 

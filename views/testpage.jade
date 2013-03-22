@@ -15,10 +15,15 @@ body
 	script(type='text/javascript')
 		document.cookie = '#{testid}-javascript=yes';
 		$.get('#{xhrUrl}', function(){ });
-		$.get('#{jsonpUrl}', function(){ document.write('JSONP complete')});
+		$.get('#{jsonpUrl}', function(){ });
 		setTimeout(function(){
 			$('#sendresults').submit();
 		}, 1000);
+
+	- if(typeof(javascriptReadUrl) !== 'undefined'){
+		script(type='text/javascript')
+			$.get('#{javascriptReadUrl}', function(){ });
+	- }
 
 block footer
 	footer
