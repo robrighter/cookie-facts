@@ -1,0 +1,22 @@
+body {
+	background-color: #eee;
+	color: #666;
+	font-family: Helvetica, Arial;
+}
+
+h1 {
+	font-size: 14px;
+}
+
+table {
+	border: 2px solid #333;
+}
+
+table td {
+	background-color: #ccc;
+	padding: 10px;
+}
+
+table td.pass {
+	background-color : #A0BD2C; 
+}
