@@ -35,7 +35,7 @@ module.exports = function(tid, config, scenarioHelper){
 	return {
 		testid: tid,
 		name: 'HTTPS from HTTP (read)',
-		description: 'Attempts to read a cookie on another unrelated domain.',
+		description: 'Attempts to read a cookie on an https url from an http url',
 		startUrl: url + '/' + tid,
 		generateResultsTable: scenarioHelper.makeResultsParser(expectedCookies,tid),
 		routes: [ 
