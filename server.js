@@ -10,7 +10,8 @@ var scenarioHelper = require('./scenario-helper');
 
 var scenarios = {};
 fs.readdirSync('./scenarios').forEach(function(s){
-	var obj = require('./scenarios/'+(s.replace(/.js/g, '')))(config,scenarioHelper);
+	var testid = s.replace(/.js/g, '');
+	var obj = require('./scenarios/'+testid)(testid,config,scenarioHelper);
 	console.log('THE SCENARIO OBJECT IS:');
 	console.log(obj);
 	scenarios[obj.testid] = obj

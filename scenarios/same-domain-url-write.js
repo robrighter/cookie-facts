@@ -1,6 +1,5 @@
-module.exports = function(config, scenarioHelper){
-
-	var tid = 'same-domain-url-write';
+module.exports = function(tid, config, scenarioHelper){
+	
 	var expectedCookies = scenarioHelper.makeExpectedCookiesList(tid);
 
 	function startRoute(req,res){
