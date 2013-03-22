@@ -37,9 +37,6 @@ body
 
 		//jsonp
 		$.getJSON('#{jsonpUrl}?callback=?', function(){ });
-		setTimeout(function(){
-			$('#sendresults').submit();
-		}, 1000);
 
 	- if(typeof(javascriptReadUrl) !== 'undefined'){
 		script(type='text/javascript')
@@ -51,6 +48,19 @@ body
 	- if((typeof(write) !== 'undefined') && write){
 		script(type='text/javascript')
 			document.cookie = '#{testid}-javascript=yes';
+	- }
+
+	- if((typeof(jsRedirect) !== 'undefined') && (jsRedirect != '') ){
+		script(type='text/javascript')
+			setTimeout(function(){
+				window.location = '#{jsRedirect}';
+			}, 1000);
+	- }
+	- else {
+		script(type='text/javascript')
+			setTimeout(function(){
+				$('#sendresults').submit();
+			}, 1000);
 	- }
 
 

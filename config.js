@@ -6,7 +6,8 @@ module.exports = {
 	subdomainHttpUrl: 'http://subdomain.demosite.com:8081',
 	subdomainHttpsUrl: 'https://subdomain.demosite.com:8082',
 	otherHttpUrl: 'http://otherdemosite.com:8081',
-	otherHttpsUrl: 'https://otherdemosite.com:8082'
+	otherHttpsUrl: 'https://otherdemosite.com:8082',
+	otherDomainNeverInAddressBarUrl: 'http://nevertypethisinaddressbar.com:8081',
 }
 
 
@@ -14,9 +15,9 @@ module.exports = {
 // Same Domain - Done
 // Sub Domain - Done
 // Other Domain -Done
-// https from http
-// http from https
-// other domain that has never been in address bar
+// https from http - Done
+// http from https - Done
+// other domain that has never been in address bar - Done
 // 404 response
 // 500 response
 // 302 response
