@@ -37,7 +37,8 @@ body
 			}
 		});
 
-		$.get('#{jsonpUrl}', function(){ });
+		//jsonp
+		$.getJSON('#{jsonpUrl}?callback=?', function(){ });
 		setTimeout(function(){
 			$('#sendresults').submit();
 		}, 1000);
