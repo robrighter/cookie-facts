@@ -23,26 +23,28 @@ module.exports.decorate = function(app,config,scenarios){
 		});
 	});
 
-	app.get('/write-cookie/:key/:value', function(req,res){
+	app.get('/write-cookie/:key/:value', writeCookieKeyValue);
+	app.post('/write-cookie/:key/:value', writeCookieKeyValue);
+	function writeCookieKeyValue(req,res){
 		res.cookie(req.params.key, req.params.value)
-		res.send({
+		var reply = {
 			reply: 'wrote',
 			key: req.params.key,
 			value: req.params.value
-		});
-	});
-
-	app.post('/write-cookie/:key/:value', function(req,res){
-		res.cookie(req.params.key, req.params.value)
-		res.send({
-			reply: 'wrote',
-			key: req.params.key,
-			value: req.params.value
-		});
-	});
+		};
+		if(req.query.hasOwnProperty('replywith')){
+			res.send(req.query.replywith, reply);
+		}
+		else{
+			res.send(reply);
+		}
+	}
 
 	app.get('/write-cookie-html/:key/:value', function(req,res){
 		res.cookie(req.params.key, req.params.value)
+		if(req.query.hasOwnProperty('replywith')){
+			res.statusCode = req.query.replywith;
+		}
 		res.render('htmlreply',{
 			layout: false,
 			reply: 'wrote',
@@ -57,6 +59,9 @@ module.exports.decorate = function(app,config,scenarios){
 			".reply{\n"+
 			"     font-size: 10px;\n"+
 			"}";
+		if(req.query.hasOwnProperty('replywith')){
+			res.statusCode = req.query.replywith;
+		}
 		res.setHeader('Content-Type', 'text/css');
 		res.setHeader('Content-Length', body.length);
 		res.end(body);
@@ -65,6 +70,9 @@ module.exports.decorate = function(app,config,scenarios){
 	app.get('/write-cookie-script/:key/:value', function(req,res){
 		res.cookie(req.params.key, req.params.value)
 		var body = "//set the cookie\n" + " var "+req.params.key+" = "+req.params.value+";\n";
+		if(req.query.hasOwnProperty('replywith')){
+			res.statusCode = req.query.replywith;
+		}
 		res.setHeader('Content-Type', 'application/javascript');
 		res.setHeader('Content-Length', body.length);
 		res.end(body);
@@ -73,6 +81,9 @@ module.exports.decorate = function(app,config,scenarios){
 	app.get('/write-cookie-image/:key/:value', function(req,res){
 		res.cookie(req.params.key, req.params.value)
 		var img = fs.readFileSync('./image.gif');
+		if(req.query.hasOwnProperty('replywith')){
+			res.statusCode = req.query.replywith;
+		}
 		res.setHeader('Content-Type', 'image/gif');
 		res.end(img,'binary');
 	});
