@@ -69,7 +69,7 @@ In each scenario the following methods are attempted for reading and writing the
 
 (8) XHR-Post - XHR Post Request
 
-(9) XHR-Post-Cred - XHR Post Request with <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Requests_with_credentials">xhr object's "with Credentials" flag</a>
+(9) XHR-Post-Cred - XHR Post Request with the <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Requests_with_credentials">xhr object's withCredentials flag</a>
 
 (10) JSONP - Script tag added into dom request
 
