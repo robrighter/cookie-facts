@@ -10,18 +10,3 @@ module.exports = {
 	otherDomainNeverInAddressBarUrl: 'http://nevertypethisinaddressbar.com:8081',
 	subdomainNeverInAddressBarUrl: 'http://nevertypethisinaddressbar.demosite.com:8081'
 }
-
-
-//Priority
-// Same Domain - Done
-// Sub Domain - Done
-// Other Domain -Done
-// https from http - Done
-// http from https - Done
-// other domain that has never been in address bar - Done
-// 404 response - Done
-// 500 response - Done
-// 302 response
-// 301 response
-// other domain with cors
-// sub domain with cors

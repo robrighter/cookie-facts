@@ -110,3 +110,38 @@ A scenario in this project consists of an originating page/url on a client and i
 	(16) Subdomain that has never been in address-bar Write
 
 
+<strong>The list of scenarios that still need to be added:<strong><br >
+<em>** pull requests welcome ;-)</em>
+
+	(1) 302 response read
+
+	(2) 302 response write
+
+	(3) 301 response read
+
+	(4) 301 response write
+
+	(5) Other domain with proper cors headers read
+
+	(6) Other domain with proper cors headers write
+
+	(7) Other domain with proper cors headers that has never been in address bar read
+
+	(8) Other domain with proper cors headers that has never been in address bar write
+
+	(9) Subdomain with proper cors headers read
+
+	(10) Subdomain with proper cors headers write
+
+	(11) Subdomain with proper cors headers that has never been in address bar read
+
+	(12) Subdomain with proper cors headers that has never been in address bar write
+
+	(13) SecureOnly cookie https from http read
+
+	(14) SecureOnly cookie https from http write
+
+	(15) SecureOnly cookie http from https read
+
+	(16) SecureOnly cookie http from https write
+
