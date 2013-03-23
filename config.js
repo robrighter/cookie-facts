@@ -8,6 +8,7 @@ module.exports = {
 	otherHttpUrl: 'http://otherdemosite.com:8081',
 	otherHttpsUrl: 'https://otherdemosite.com:8082',
 	otherDomainNeverInAddressBarUrl: 'http://nevertypethisinaddressbar.com:8081',
+	subdomainNeverInAddressBarUrl: 'http://nevertypethisinaddressbar.demosite.com:8081'
 }
 
 

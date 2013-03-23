@@ -27,7 +27,7 @@ To run the tests:
 
 (3) Add the following line to your /etc/hosts file:
 
-	127.0.0.1 demosite.com subdomain.demosite.com otherdemosite.com nevertypethisinaddressbar.com
+	127.0.0.1 demosite.com subdomain.demosite.com otherdemosite.com nevertypethisinaddressbar.com nevertypethisinaddressbar.demosite.com
 
 (3) Run the server
 
@@ -104,5 +104,9 @@ A scenario in this project consists of an originating page/url on a client and i
 	(13) 404 response write
 
 	(14) 500 resonse write
+
+	(15) Subdomain that has never been in address-bar Read
+
+	(16) Subdomain that has never been in address-bar Write
 
 
