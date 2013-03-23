@@ -41,7 +41,32 @@ In each scenario the following methods are attempted for reading and writing the
 
 
 The current list of scenarios are:
+(1) Same Domain Read
 
+(2) Same Domain Write
 
+(3) Sub-Domain Read
+
+(4) Sub-Domain Write
+
+(5) Other Domain Read
+
+(6) Other Domain Write
+
+(7) Other Domain that has never been in address-bar Read
+
+(8) Other Domain that has never been in address-bar Write
+
+(9) Https from Http Read
+
+(10) Https from Http Write
+
+(11) Http from Https Read
+
+(12) Http from Https Write
+
+(13) 404 response write
+
+(14) 500 resonse write
 
 
