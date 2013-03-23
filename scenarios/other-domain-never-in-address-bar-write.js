@@ -25,7 +25,7 @@ module.exports = function(tid, config, scenarioHelper){
 
 	return {
 		testid: tid,
-		name: '2[RUN FIRST] - Other Domain Never In Address Bar (write)',
+		name: 'Other Domain Never In Address Bar (write)',
 		description: 'Attempts to set a cookie on another unrelated domain that has never been in the address bar. Note* you need to clear your history before running this test.',
 		startUrl: config.httpUrl + '/' + tid,
 		generateResultsTable: scenarioHelper.makeResultsParser(expectedCookies,tid),

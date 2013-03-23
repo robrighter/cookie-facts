@@ -47,7 +47,7 @@ module.exports = function(tid, config, scenarioHelper){
 
 	return {
 		testid: tid,
-		name: '1[RUN FIRST] - Other Domain Never In Address Bar (read)',
+		name: 'Other Domain Never In Address Bar (read)',
 		description: 'Attempts to read a cookie on another unrelated domain that has never been in the address bar.',
 		startUrl: config.httpUrl + '/' + tid,
 		generateResultsTable: scenarioHelper.makeResultsParser(expectedCookies,tid),

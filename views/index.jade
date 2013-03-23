@@ -2,19 +2,17 @@ extends ./layout
 
 block content
 	#topbar
-		h1.title='Cookie Facts'
-	#console
-
+		h1.title='The Cookie Facts'
+		div.run-all
+			a(href='/run-all') Run All Scenarios &raquo;
 	#content
-		div.scenario-list
-			h2='Scenarios'
-			- for(key in scenarios){
-				li
-					a(href=scenarios[key].startUrl)= scenarios[key].name
-			- }
-		
 		div.results-list
-			h2='Results'
-			- testresults.forEach(function(item){
-				!{item}
-			- })
+			- for(key in scenarios){
+				div.scenario(id=scenarios[key].testid)
+					h2
+						span.name #{scenarios[key].name}
+						span.run
+							a(href=scenarios[key].startUrl)= 'Run Scenario &raquo;'
+					div.description #{scenarios[key].description}
+					div.result-table !{scenarios[key].generateResultsTable(results)}
+			- }

@@ -8,17 +8,33 @@ module.exports.decorate = function(app,config,scenarios){
 	var testResults = {};
 	config.testResults = testResults;
 
+	app.get('/run-all', function(req,res){
+		res.cookie('run-all-scenarios', 0);
+		res.redirect(302, config.httpUrl);
+	});
+
+	function processRunAllScenarios(req,res){
+		var current = parseInt(req.cookies['run-all-scenarios']);
+		var scenariosArr = Object.keys(scenarios);
+		if(current < scenariosArr.length){
+			var redirectUrl = scenarios[scenariosArr[current]].startUrl;
+			res.cookie('run-all-scenarios', current+1);
+			res.redirect(302, redirectUrl);
+		}
+		else{
+			res.clearCookie('run-all-scenarios');
+			res.redirect(302, config.httpUrl);
+		}
+	}
 
 	app.get('/', function(req,res){
-		var resultTables = [];
-		Object.keys(scenarios).forEach(function(key){
-			var intro = "<p><strong>"+scenarios[key].name+"</strong><br />";
-			intro += scenarios[key].description+"</p>";
-			resultTables.push(intro+scenarios[key].generateResultsTable(testResults));
-		});
+		if(req.cookies.hasOwnProperty('run-all-scenarios')){
+			processRunAllScenarios(req,res);
+			return;
+		}
 		res.render('index',{
 			title: 'Cookie Facts',
-			testresults: resultTables,
+			results: testResults,
 			scenarios: scenarios
 		});
 	});
@@ -26,7 +42,7 @@ module.exports.decorate = function(app,config,scenarios){
 	app.get('/write-cookie/:key/:value', writeCookieKeyValue);
 	app.post('/write-cookie/:key/:value', writeCookieKeyValue);
 	function writeCookieKeyValue(req,res){
-		res.cookie(req.params.key, req.params.value)
+		res.cookie(req.params.key, req.params.value);
 		var reply = {
 			reply: 'wrote',
 			key: req.params.key,
