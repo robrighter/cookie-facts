@@ -18,7 +18,7 @@ To run the tests:
 
 (1) Clone the repository locally:
 
-	git://github.com/robrighter/cookie-facts.git
+	git clone git://github.com/robrighter/cookie-facts.git
 
 (2) Install (Assumes you have installed node.js on your machine)
 
@@ -37,7 +37,7 @@ To run the tests:
 
 	http://demosite.com:8081
 
-	**note for best resutls clear all your cookies and history first
+	**note for best results clear all your cookies and history first
 
 (5) Click the "Run All Scenarios" button on the top right of the page
 
