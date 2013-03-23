@@ -19,54 +19,57 @@ A scenario in this project consists of an originating page/url on a client and i
 
 In each scenario the following methods are attempted for reading and writing the cookie:
 
-(1) HTML - HTML page view request
 
-(2) CSS - CSS link tag request
+		(1) HTML - HTML page view request
 
-(3) Script - Script tag request
+		(2) CSS - CSS link tag request
 
-(4) Javascript - On page javascript within a script tag
+		(3) Script - Script tag request
 
-(5) Image - img tag request
+		(4) Javascript - On page javascript within a script tag
 
-(6) Iframe - iframe tag request
+		(5) Image - img tag request
 
-(7) XHR-Get - XHR Get Request
+		(6) Iframe - iframe tag request
 
-(8) XHR-Post - XHR Post Request
+		(7) XHR-Get - XHR Get Request
 
-(9) XHR-Post-Cred - XHR Post Request with xhr object's "Send Credentials" flag
+		(8) XHR-Post - XHR Post Request
 
-(10) JSONP - Script tag added into dom request
+		(9) XHR-Post-Cred - XHR Post Request with xhr object's "Send Credentials" flag
+
+		(10) JSONP - Script tag added into dom request
 
 
-The current list of scenarios are:
-(1) Same Domain Read
 
-(2) Same Domain Write
+<strong>The current list of scenarios are:</strong>
 
-(3) Sub-Domain Read
+		(1) Same Domain Read
 
-(4) Sub-Domain Write
+		(2) Same Domain Write
 
-(5) Other Domain Read
+		(3) Sub-Domain Read
 
-(6) Other Domain Write
+		(4) Sub-Domain Write
 
-(7) Other Domain that has never been in address-bar Read
+		(5) Other Domain Read
 
-(8) Other Domain that has never been in address-bar Write
+		(6) Other Domain Write
 
-(9) Https from Http Read
+		(7) Other Domain that has never been in address-bar Read
 
-(10) Https from Http Write
+		(8) Other Domain that has never been in address-bar Write
 
-(11) Http from Https Read
+		(9) Https from Http Read
 
-(12) Http from Https Write
+		(10) Https from Http Write
 
-(13) 404 response write
+		(11) Http from Https Read
 
-(14) 500 resonse write
+		(12) Http from Https Write
+
+		(13) 404 response write
+
+		(14) 500 resonse write
 
 
