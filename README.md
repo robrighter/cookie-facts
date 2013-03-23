@@ -110,7 +110,7 @@ A scenario in this project consists of an originating page/url on a client and i
 	(16) Subdomain that has never been in address-bar Write
 
 
-<strong>The list of scenarios that still need to be added:<strong><br >
+<strong>The list of scenarios that still need to be added:</strong><br >
 <em>** pull requests welcome ;-)</em>
 
 	(1) 302 response read
