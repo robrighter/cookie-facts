@@ -11,6 +11,39 @@ I thought I understood browser cookie behavior. But, turns out I did'nt know all
 This project does not include anywhere close to ALL the scenarios, so if you think of one please consider submitting a pull request.
 
 
+Usage
+=========================
+
+To run the tests:
+
+(1) Clone the repository locally:
+
+	git://github.com/robrighter/cookie-facts.git
+
+(2) Install (Assumes you have installed node.js on your machine)
+
+	cd cookie-facts
+	npm install .
+
+(3) Add the following line to your /etc/hosts file:
+
+	127.0.0.1 demosite.com subdomain.demosite.com otherdemosite.com nevertypethisinaddressbar.com
+
+(3) Run the server
+
+	node server
+
+(4) Open the following url in your web browser
+
+	http://demosite.com:8081
+
+	**note for best resutls clear all your cookies and history first
+
+(5) Click the "Run All Scenarios" button on the top right of the page
+
+(6) Approve any https security warnings while the test is running
+
+(7) Run steps 4-7 for any browsers that you would like to test
 
 Scenarios
 =========================
@@ -20,56 +53,56 @@ A scenario in this project consists of an originating page/url on a client and i
 In each scenario the following methods are attempted for reading and writing the cookie:
 
 
-		(1) HTML - HTML page view request
+	(1) HTML - HTML page view request
 
-		(2) CSS - CSS link tag request
+	(2) CSS - CSS link tag request
 
-		(3) Script - Script tag request
+	(3) Script - Script tag request
 
-		(4) Javascript - On page javascript within a script tag
+	(4) Javascript - On page javascript within a script tag
 
-		(5) Image - img tag request
+	(5) Image - img tag request
 
-		(6) Iframe - iframe tag request
+	(6) Iframe - iframe tag request
 
-		(7) XHR-Get - XHR Get Request
+	(7) XHR-Get - XHR Get Request
 
-		(8) XHR-Post - XHR Post Request
+	(8) XHR-Post - XHR Post Request
 
-		(9) XHR-Post-Cred - XHR Post Request with xhr object's "Send Credentials" flag
+	(9) XHR-Post-Cred - XHR Post Request with xhr object's "Send Credentials" flag
 
-		(10) JSONP - Script tag added into dom request
+	(10) JSONP - Script tag added into dom request
 
 
 
 <strong>The current list of scenarios are:</strong>
 
-		(1) Same Domain Read
+	(1) Same Domain Read
 
-		(2) Same Domain Write
+	(2) Same Domain Write
 
-		(3) Sub-Domain Read
+	(3) Sub-Domain Read
 
-		(4) Sub-Domain Write
+	(4) Sub-Domain Write
 
-		(5) Other Domain Read
+	(5) Other Domain Read
 
-		(6) Other Domain Write
+	(6) Other Domain Write
 
-		(7) Other Domain that has never been in address-bar Read
+	(7) Other Domain that has never been in address-bar Read
 
-		(8) Other Domain that has never been in address-bar Write
+	(8) Other Domain that has never been in address-bar Write
 
-		(9) Https from Http Read
+	(9) Https from Http Read
 
-		(10) Https from Http Write
+	(10) Https from Http Write
 
-		(11) Http from Https Read
+	(11) Http from Https Read
 
-		(12) Http from Https Write
+	(12) Http from Https Write
 
-		(13) 404 response write
+	(13) 404 response write
 
-		(14) 500 resonse write
+	(14) 500 resonse write
 
 
