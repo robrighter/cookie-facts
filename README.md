@@ -50,28 +50,28 @@ Scenarios
 
 A scenario in this project consists of an originating page/url on a client and its relationship to another page/url. In a scenario we attempt to both accept and send a cookie from the originating page/url to the other page/url.
 
-In each scenario the following methods are attempted for reading and writing the cookie:
+<strong>In each scenario the following methods are attempted for reading and writing the cookie:</strong>
 
 
-(1) HTML - HTML page view request
+	(1) HTML - HTML page view request
 
-(2) CSS - CSS link tag request
+	(2) CSS - CSS link tag request
 
-(3) Script - Script tag request
+	(3) Script - Script tag request
 
-(4) Javascript - On page javascript within a script tag
+	(4) Javascript - On page javascript within a script tag
 
-(5) Image - img tag request
+	(5) Image - img tag request
 
-(6) Iframe - iframe tag request
+	(6) Iframe - iframe tag request
 
-(7) XHR-Get - XHR Get Request
+	(7) XHR-Get - XHR Get Request
 
-(8) XHR-Post - XHR Post Request
+	(8) XHR-Post - XHR Post Request
 
-(9) XHR-Post-Cred - XHR Post Request with the <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Requests_with_credentials">xhr object's withCredentials flag</a>
+	(9) XHR-Post-Cred - XHR Post Request with the <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Requests_with_credentials">xhr object's withCredentials flag</a>
 
-(10) JSONP - Script tag added into dom request
+	(10) JSONP - Script tag added into dom request
 
 
 
