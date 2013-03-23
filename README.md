@@ -50,7 +50,7 @@ Scenarios
 
 A scenario in this project consists of an originating page/url on a client and its relationship to another page/url. In a scenario we attempt to both accept and send a cookie from the originating page/url to the other page/url.
 
-<strong>In each scenario the following methods are attempted for reading and writing the cookie:</strong>
+<strong>Each scenario includes the following list of requests:</strong>
 
 
 (1) HTML - HTML page view request
