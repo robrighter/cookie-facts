@@ -48,6 +48,9 @@ module.exports.decorate = function(app,config,scenarios){
 			key: req.params.key,
 			value: req.params.value
 		};
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
+		}
 		if(req.query.hasOwnProperty('replywith')){
 			res.send(req.query.replywith, reply);
 		}
@@ -60,6 +63,9 @@ module.exports.decorate = function(app,config,scenarios){
 		res.cookie(req.params.key, req.params.value)
 		if(req.query.hasOwnProperty('replywith')){
 			res.statusCode = req.query.replywith;
+		}
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
 		}
 		res.render('htmlreply',{
 			layout: false,
@@ -78,6 +84,9 @@ module.exports.decorate = function(app,config,scenarios){
 		if(req.query.hasOwnProperty('replywith')){
 			res.statusCode = req.query.replywith;
 		}
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
+		}
 		res.setHeader('Content-Type', 'text/css');
 		res.setHeader('Content-Length', body.length);
 		res.end(body);
@@ -88,6 +97,9 @@ module.exports.decorate = function(app,config,scenarios){
 		var body = "//set the cookie\n" + " var somecookie = '"+req.params.key+"';\n";
 		if(req.query.hasOwnProperty('replywith')){
 			res.statusCode = req.query.replywith;
+		}
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
 		}
 		res.setHeader('Content-Type', 'application/javascript');
 		res.setHeader('Content-Length', body.length);
@@ -100,11 +112,17 @@ module.exports.decorate = function(app,config,scenarios){
 		if(req.query.hasOwnProperty('replywith')){
 			res.statusCode = req.query.replywith;
 		}
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
+		}
 		res.setHeader('Content-Type', 'image/gif');
 		res.end(img,'binary');
 	});
 
 	app.get('/read-cookie/:key', function(req,res){
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
+		}
 		res.send({
 			value: req.cookies[req.params.key]
 		});
@@ -116,6 +134,9 @@ module.exports.decorate = function(app,config,scenarios){
 		var result = (req.cookies[req.params.toread] === req.params.tid) ? true : false;
 		if( !(testResults[req.headers['user-agent']]) ){
 			testResults[req.headers['user-agent']] = {};
+		}
+		if(req.query.hasOwnProperty('p3p')){
+			res.setHeader('P3P', req.query.p3p);
 		}
 		testResults[req.headers['user-agent']][req.params.tid+req.params.resultname] = result;
 		res.send({

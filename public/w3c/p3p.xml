@@ -1,0 +1,8 @@
+<META xmlns="http://www.w3.org/2002/01/P3Pv1">
+<POLICY-REFERENCES>
+	<POLICY-REF about="http://demosite.com/w3c/privacy/policy1.xml#policy1.xml">
+	<INCLUDE>/*</INCLUDE>
+	<COOKIE-INCLUDE/>
+	</POLICY-REF>
+</POLICY-REFERENCES>
+</META>

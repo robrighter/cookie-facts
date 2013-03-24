@@ -109,6 +109,10 @@ A scenario in this project consists of an originating page/url on a client and i
 
 	(16) Subdomain that has never been in address-bar Write
 
+	(17) Other Domain that has never been in address-bar with p3p headers Read
+
+	(18) Other Domain that has never been in address-bar with p3p headers Write
+
 
 <strong>The list of scenarios that still need to be added:</strong><br >
 <em>** pull requests welcome ;-)</em>
