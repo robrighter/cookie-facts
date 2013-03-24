@@ -10,6 +10,10 @@ I thought I understood browser cookie behavior. But, turns out I did'nt know all
 
 This project does not include anywhere close to ALL the scenarios, so if you think of one please consider submitting a pull request.
 
+Sample Results
+=======================
+
+<a href="http://robrighter.com/cookie-facts/public/static-results.html">Click Here to view cookie-facts results &raquo;</a>
 
 Usage
 =========================
@@ -150,10 +154,5 @@ A scenario in this project consists of an originating page/url on a client and i
 	(16) SecureOnly cookie http from https write
 
 
-Sample Results
-=======================
 
-Results generated from The Cookie Facts:
-
-<iframe style="width: 100%;height: 600px" src="http://robrighter.com/cookie-facts/public/static-results.html"></iframe>
 
