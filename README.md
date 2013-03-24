@@ -149,3 +149,11 @@ A scenario in this project consists of an originating page/url on a client and i
 
 	(16) SecureOnly cookie http from https write
 
+
+Sample Results
+=======================
+
+Results generated from The Cookie Facts:
+
+<iframe style="width: 100%;height: 600px" src="http://robrighter.com/cookie-facts/public/static-results.html"></iframe>
+
