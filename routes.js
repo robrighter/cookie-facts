@@ -85,7 +85,7 @@ module.exports.decorate = function(app,config,scenarios){
 
 	app.get('/write-cookie-script/:key/:value', function(req,res){
 		res.cookie(req.params.key, req.params.value)
-		var body = "//set the cookie\n" + " var "+req.params.key+" = "+req.params.value+";\n";
+		var body = "//set the cookie\n" + " var somecookie = '"+req.params.key+"';\n";
 		if(req.query.hasOwnProperty('replywith')){
 			res.statusCode = req.query.replywith;
 		}
