@@ -15,6 +15,15 @@ Sample Results
 
 <a href="http://robrighter.com/cookie-facts/public/static-results.html">Click Here to view cookie-facts results &raquo;</a>
 
+Unexpected Results
+=======================
+Some people may find all of the results as expected. But, for me there are a few surprises. (You can see these demonstrated in the results link above):
+
+(1) Safari will never accept a third party domain cookie for a domain that has never been in the address bar (see test titled "Other Domain Never In Address Bar (write)"). As it turns out, <a href="http://yro.slashdot.org/story/13/02/23/2126246/firefox-will-soon-block-third-party-cookies">Firefox will be releasing this policy soon.</a>
+
+(2) Chrome, Firefox and Safari will allow both read and write of cookies on a third party domain for an XHR Post if the withCredentials flag is set. This works even if the cors headers do not allow the browser to parse the result. (See tests "Other Domain URL (read)" && "Other Domain URL (write)").
+
+
 Usage
 =========================
 
